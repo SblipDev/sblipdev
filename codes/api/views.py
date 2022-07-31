@@ -6,9 +6,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .permissions import IsAuthorOrReadOnly
-from .serializers import ReplySerializer, PostSerializer
-from codes.models import Reply, Post
+from .permissions import IsAuthorOrReadOnly, IsAdminUserOrReadOnly
+from .serializers import ReplySerializer, PostSerializer, BookSerializer
+from codes.models import Reply, Post, Book
 
 
 class CommentListAPIView(generics.ListAPIView):
@@ -99,12 +99,21 @@ class PostLikeAPIView(APIView):
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+class BookViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows books to be viewed or edited.
+    """
+    queryset = Book.objects.all().order_by('-created')
+    serializer_class = BookSerializer
+    permission_classes = [IsAdminUserOrReadOnly]
+
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r"posts", PostViewSet)
-
+router.register(r"books", BookViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
