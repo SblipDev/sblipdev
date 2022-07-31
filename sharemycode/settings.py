@@ -27,8 +27,7 @@ SECRET_KEY = 'tfmkyph=qw@77^_*3&aa%a&kbz@t%d$fa82b)+ci%krd%y4r9!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['192.168.1.58', '127.0.0.1', 'sblip.dev', 'www.sblip.dev', 'localhost', '3.6.170.250']
 
 # Application definition
 
