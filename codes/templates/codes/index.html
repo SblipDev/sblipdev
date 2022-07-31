@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +9,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/s.png' %}" />
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
         body, html{
             height:100%;
             width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Ubuntu Mono', monospace;
+            background-color: #f5f5f5;
+            font-size:18px;
+        }
+
+        h1,h2,h3,h4,h5,h6{
+            font-family: 'Ubuntu Mono', monospace;
         }
 
         ::-webkit-scrollbar {
-            width: 20px;
+            width: 10px;
             border-radius: 100px;
           }
           
           /* Track */
           ::-webkit-scrollbar-track {
-            background: black; 
+            background: #FFF01F; 
           }
            
           /* Handle */
@@ -34,10 +47,11 @@
             background: #880afd; 
           }
 
+
     </style>
 
 
-    <title>Shaurya Pratap Singh - sblip.dev</title>
+    <title>𝗹𝗼𝗮𝗱𝗶𝗻𝗴....</title>
 </head>
 <body>
     {% load render_bundle from webpack_loader %}
@@ -47,7 +61,7 @@
     </noscript>
     
     <!-- ENABLE AUDIO -->
-    <!-- <audio src="https://soundimage.org/wp-content/uploads/2014/10/Light-Years_v001.mp3" autoplay loop>
+    <!-- <audio src="https://www.chosic.com/wp-content/uploads/2021/07/purrple-cat-wild-strawberry.mp3" autoplay loop>
         <p>If you are reading this, it is because your browser does not support the audio element.     </p>
     </audio> -->
 
