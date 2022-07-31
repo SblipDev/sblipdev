@@ -19,10 +19,10 @@ export default {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: black;
+  background: rgb(18, 18, 18);
   color: white;
   text-align: center;
-  background-image: black;
+  background-image: rgb(18, 18, 18);
 }
 
 div .hellothere{

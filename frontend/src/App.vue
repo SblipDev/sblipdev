@@ -4,9 +4,9 @@
       <div class="container">
         <a
           href="/"
-          class="navbar-brand text-uppercase font-weight-bold"
-          style="font-size: 30px"
-          >Shaurya Pratap Singh</a
+          class="navbar-brand font-weight-bold"
+          style="font-size: 35px"
+          >SBlipDev</a
         >
         <button
           class="navbar-toggler"
@@ -38,9 +38,16 @@
             </li>
             <li class="nav-item">
               <a
+                href="/books/"
+                class="nav-link text-uppercase middle font-weight-bold"
+                >Books</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
                 href="/blogs/"
                 class="nav-link text-uppercase middle font-weight-bold"
-                >Blogs</a
+                >Blog</a
               >
             </li>
             <li class="nav-item">
@@ -51,22 +58,20 @@
               >
             </li>
            
-              <li class='nav-item' style='color:white;' v-if="user_info.is_authenticated"><a href="/accounts/logout/"  class="nav-link text-uppercase middle font-weight-bold">Logout</a></li>
-              <li class='nav-item text-uppercase middle font-weight-bold nav-link' style='color:white;' v-if="user_info.is_authenticated">Welcome back {{ user.username }}!</li>
-              <li class="nav-item" v-else>
+
               <!-- <a
                 href="/accounts/register/"
                 class="nav-link text-uppercase middle font-weight-bold"
                 >Sign up for Newsletter</a
               > -->
-            </li>
+            
           </ul>
         </div>
       </div>
     </nav>
     <router-view />
      <div class="footer">
-      <p align="center">Made with  ❤  by SblipDev</p>
+      <p align="center">© Copyright {{ year }} SblipDev</p>
     </div>
   </div>
 </template>
@@ -92,6 +97,7 @@ export default {
     return{
       user_info:null,
       user:null,
+      year:2022,
     }
   },
   methods: {
@@ -101,31 +107,24 @@ export default {
         this.user_info = data;
       });
     },
-    getUserDetails() {
-      let endpoint = "/api/rest-auth/user/";
-      apiService(endpoint).then((data) => {
-        this.user = data;
-      });
-    },
-    setUserInfo() {
-      // add the username of the logged in user to localStorage
-      const requestUser = user["username"];
-      window.localStorage.setItem("username", requestUser);
+    getYear(){
+      let date = new Date();
+      this.year = date.getFullYear();
     }
     },
 
   created() {
     this.getUserAuth();
-    this.getUserDetails()
-    this.setUserInfo();
   },
 };
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Russo+One&display=swap');
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Ubuntu Mono', monospace;
+}
+
 .navbar {
   transition: all 0.7s;
-  font-family: 'Russo One', sans-serif;
 }
 
 .navbar .nav-link {
@@ -152,11 +151,11 @@ hr.style-seven {
 }
 
 .navbar.active .nav-link {
-  background-color: black;
+  background-color: rgb(18, 18, 18);
 }
 
 .navbar.active .nav-link:hover {
-  background-color: black;
+  background-color: rgb(18, 18, 18);
 }
 
 .navbar.active .navbar-brand {
@@ -191,7 +190,7 @@ a.middle:hover::after {
   color: white;
 }
 .navbar.active .icon {
-  color: black;
+  color: rgb(18, 18, 18);
 }
 
 @media only screen and (max-width: 768px) {
@@ -214,7 +213,7 @@ a.middle:hover::after {
 }
 }
 #app{
-  background: black;
+  background: rgb(18, 18, 18);
 }
 pre{
   background:white;
@@ -225,7 +224,7 @@ pre{
 .footer{
   color:#8400ff;
   padding:10px;
-  background-color: black;
+  background-color: rgb(18, 18, 18);
   font-size: 17px;
 }
 

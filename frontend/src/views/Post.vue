@@ -74,10 +74,10 @@ export default {
 <style>
 .postdetail-page {
   min-height: 100vh;
-  background: black;
+  background: rgb(18, 18, 18);
   color: white;
   padding-top:90px;
-  background: black;
+  background: rgb(18, 18, 18);
 }
 /* .half-page{
   display: flex;
@@ -85,7 +85,7 @@ export default {
   justify-content: center;
   width:80vh;
   height:100vh;
-  background:black;
+  background:rgb(18, 18, 18);
   position:fixed;
   margin-right:45px;
   padding:20px;
@@ -101,12 +101,12 @@ export default {
 .content{
   background:white;
   min-height:800px;
-  color:black;
+  color:rgb(18, 18, 18);
   padding:10px;
   border-radius:1px 15px 15px 15px;
 }
 .comment{
-  border:3px solid black;
+  border:3px solid rgb(18, 18, 18);
   border-radius:5px;
   padding:5px;
 }

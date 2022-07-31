@@ -48,10 +48,10 @@ export default {
 }
 .post-page {
   min-height: 100vh;
-  background: black;
+  background: rgb(18, 18, 18);
   padding-top: 100px;
   color: white;
-  background: black
+  background: rgb(18, 18, 18)
     fixed;
   background-repeat: no-repeat;
   background-size: cover;
