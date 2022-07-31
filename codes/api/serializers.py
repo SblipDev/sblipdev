@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 
 from rest_framework import serializers
-from codes.models import Post, Reply
+from codes.models import Post, Reply, Book
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -43,3 +43,22 @@ class ReplySerializer(serializers.ModelSerializer):
 
     def get_post_id(self, instance):
         return instance.post.id
+
+class BookSerializer(serializers.ModelSerializer):
+    
+    stars_in_emoji = serializers.SerializerMethodField()
+    class Meta:
+        model = Book
+        fields = "__all__"
+    
+    def get_stars_in_emoji(self, instance):
+        if instance.rating == 5:
+            return "⭐⭐⭐⭐⭐"
+        elif instance.rating == 4:
+            return "⭐⭐⭐⭐☆"
+        elif instance.rating == 3:
+            return "⭐⭐⭐☆☆"
+        elif instance.rating == 2:
+            return "⭐⭐☆☆☆"
+        elif instance.rating == 1:
+            return "⭐☆☆☆☆"        
