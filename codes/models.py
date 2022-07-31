@@ -23,3 +23,14 @@ class Reply(models.Model):
     loves = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name="loves")
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="replies")
+
+class Book(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=100)
+    book_image_url = models.URLField(max_length=200)
+    author = models.CharField(max_length=100)
+    book_url = models.URLField(max_length=200)
+    rating = models.IntegerField()
+
+    class Meta:
+        ordering = ['created']
